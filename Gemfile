@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #MIS GEMAS
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-material-design'
 gem 'devise'
 gem 'omniauth-facebook' #Pendiente instalacion
 gem 'actionmailer' #Pendiente instalacion

@@ -11,30 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :city_id %><br>
-    <%= f.text_field :city_id %>
+    <%= f.select(:city_id, City.all.collect {|a| [a.name, a.id]}, {}, { class: 'form-control' }) -%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :rol %><br>
-    <%= f.text_field :rol %>
+    <%= f.text_field :rol, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :avatar %><br>
-    <%= f.file_field :avatar %>
+    <%= f.file_field :avatar, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit 'Enviar', class: "btn btn-primary" %>
   </div>
 <% end %>
-<input type="date" class="datepicker">
-<script type="text/javascript">
-  $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
-  });
-</script>

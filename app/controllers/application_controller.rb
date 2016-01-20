@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
 
   private
   def es_admin
-  	if !current_user.present? || current_user.rol != "Admin"
+  	if !user_signed_in? || current_user.rol != "Admin"
+      flash[:error] = "unauthorized access"
   		redirect_to new_user_session_path
   	end
   end

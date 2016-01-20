@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
+<%= link_to 'Agregar', new_user_path, class: "pull-right btn btn-primary" %>
 <h1>Listing Users</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
+      <th>Country</th>
       <th>City</th>
       <th>Name</th>
       <th>Rol</th>
@@ -16,7 +18,8 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.city %></td>
+        <td><%= user.city.country.name %></td>
+        <td><%= user.city.name %></td>
         <td><%= user.name %></td>
         <td><%= user.rol %></td>
         <td><%= image_tag user.avatar.url(:thumb) %></td>
@@ -28,6 +31,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+</div>
