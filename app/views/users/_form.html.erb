@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :city_id %><br>
-    <%= f.select(:city_id, City.all.collect {|a| [a.name, a.id]}, {}, { class: 'form-control' }) -%>
+    <%= f.select(:city_id, City.all.collect {|a| [a.name, a.id]}, {}, { class: 'form-control' }) %>
   </div>
   <div class="form-group">
     <%= f.label :name %><br>
