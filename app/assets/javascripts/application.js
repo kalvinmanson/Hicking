@@ -21,5 +21,24 @@
 $(document).ready(function() {
 	
 	$.material.init()
+
+	$('#ajax_country_id').on('change', function () {
+	    $.ajax({
+	        url: "/cities_country/1.json",
+	    }).done(function (data) {
+	        change_select(data);
+	    });
+	});
+
+	function change_select(data) {
+
+	    var json = jQuery.parseJSON('[{"1" : "string","2" : "strisadasdng"}]');
+	    console.log(json);
+	    var options = [];
+	    $.each(json, function () {
+                $("#user_city_id").append($("<option></option>").val(this['ITEMID']).html(this['ITEMDESC']));
+            });
+	    $("#user_city_id").replaceOptions(options);
+	};
 });
 

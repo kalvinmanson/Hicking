@@ -5,7 +5,11 @@ class CitiesController < ApplicationController
   # GET /cities
   # GET /cities.json
   def index
-    @cities = City.all
+    if params[:id].present?
+      @cities = City.where(country_id: params[:id]).paginate(:page => params[:page])
+    else 
+      @cities = City.paginate(:page => params[:page])
+    end
   end
 
   # GET /cities/1
