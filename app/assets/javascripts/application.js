@@ -22,23 +22,52 @@ $(document).ready(function() {
 	
 	$.material.init()
 
-	$('#ajax_country_id').on('change', function () {
-	    $.ajax({
-	        url: "/cities_country/1.json",
-	    }).done(function (data) {
-	        change_select(data);
-	    });
-	});
+	//Manejador de combos
+    $(".combo_change").change(function(){
+        var origen = $(this);
+        var destino = $("#"+origen.data("destino")+"");
+        var grupo = $("#"+origen.data("grupo")+"");
 
-	function change_select(data) {
+        if($(this).val() != '')
+        {
+            $.ajax({
+            	data: { id : origen.val() },
+                url:   origen.data("fuente"),
+                type:  'POST',
+                dataType: 'json',
+                beforeSend: function () {
+                    origen.prop('disabled', true);
+                },
+                success:  function (r) 
+                {
+                    origen.prop('disabled', false);
+                    destino.find('option').remove();
 
-	    var json = jQuery.parseJSON('[{"1" : "string","2" : "strisadasdng"}]');
-	    console.log(json);
-	    var options = [];
-	    $.each(json, function () {
-                $("#user_city_id").append($("<option></option>").val(this['ITEMID']).html(this['ITEMDESC']));
+                    $(r).each(function(i, v){ // indice, valor
+                        destino.append('<option value="' + v.id + '">' + v.name + '</option>');
+                    })
+
+                    destino.prop('disabled', false);
+                    grupo.show();
+                },
+                error: function()
+                {
+                    alert('Ocurrio un error en el servidor ..');
+                    origen.prop('disabled', false);
+                    grupo.hide();
+                }
             });
-	    $("#user_city_id").replaceOptions(options);
-	};
+        }
+        else
+        {
+            destino.find('option').remove();
+            destino.prop('disabled', true);
+            grupo.hide();
+        }
+    }) // fin Manejador de combos
+
 });
 
+
+
+    

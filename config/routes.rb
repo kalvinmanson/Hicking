@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
 
   get '/cities_country/:id', to: 'cities#index', as: 'cities_country'
+  post '/cities_country', to: 'cities#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,20 +11,22 @@
     </div>
   <% end %>
 
+
   <div class="form-group">
-    <%= select("ajax", "country_id", Country.all.collect {|a| [a.name, a.id]}, {}, { class: 'form-control' }) %>
+    <%= label :ajax, :country_id %><br>
+    <%= select("ajax", "country_id", Country.all.collect {|a| [a.name, a.id]}, {:prompt => "Selecciona tu pais"}, { class: 'form-control combo_change', :data => { :fuente => "/cities_country.json", :destino => 'user_city_id', :grupo => 'city_id_group' } }) %>
   </div>
-  <div class="form-group">
+  <div class="form-group" id="city_id_group" style="display:none;">
     <%= f.label :city_id %><br>
-    <%= f.select(:city_id, City.all.collect {|a| [a.name, a.id]}, {}, { class: 'form-control' }) %>
+    <%= f.select(:city_id, City.all.collect {|a| [a.name, a.id]}, {}, { class: 'form-control', disabled: true }) %>
   </div>
   <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, class: "form-control", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :rol %><br>
-    <%= f.text_field :rol, class: "form-control" %>
+    <%= f.text_field :rol, class: "form-control", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :avatar %><br>
