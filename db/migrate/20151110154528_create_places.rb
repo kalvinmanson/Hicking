@@ -4,7 +4,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.references :user, index: true
       t.references :city, index: true
       t.string :name
-      t.string :slug
+      t.string :slug, unique: true
       t.text :content
       t.boolean :active
 

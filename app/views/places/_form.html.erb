@@ -11,31 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.select(:user_id, User.all.collect {|a| [a.name, a.id]}, {}, { class: 'form-control' }) %>
   </div>
-  <div class="field">
+  <div class="form-group">
+    <%= label :ajax, :country_id %><br>
+    <%= select("ajax", "country_id", Country.all.collect {|a| [a.name, a.id]}, {:prompt => "Selecciona tu pais"}, { class: 'form-control combo_change', :data => { :fuente => "/cities_country.json", :destino => 'place_city_id', :grupo => 'city_id_group' } }) %>
+  </div>
+  <div class="form-group" id="city_id_group">
     <%= f.label :city_id %><br>
-    <%= f.text_field :city_id %>
+    <%= f.select(:city_id, City.all.collect {|a| [a.name, a.id]}, {}, { class: 'form-control', disabled: true }) %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control", required: true %>
   </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class: "form-control", rows: 10 %>
   </div>
-  <div class="field">
-    <%= f.label :active %><br>
-    <%= f.number_field :active %>
+  <div class="form-group">
+    <div class="checkbox">
+      <%= f.label :active do %>
+      <%= f.check_box :active %>  Activo
+      <% end %>
+    </div>
   </div>
-  <div class="actions">
+  <div class="form-group">
     <%= f.submit %>
   </div>
 <% end %>

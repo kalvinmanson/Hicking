@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112221528) do
+ActiveRecord::Schema.define(version: 20160211172159) do
 
   create_table "attributes", force: :cascade do |t|
     t.integer  "place_id"
@@ -83,6 +83,19 @@ ActiveRecord::Schema.define(version: 20151112221528) do
   add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "likes", force: :cascade do |t|
     t.string   "liker_type"
     t.integer  "liker_id"
@@ -125,11 +138,13 @@ ActiveRecord::Schema.define(version: 20151112221528) do
   end
 
   add_index "places", ["city_id"], name: "index_places_on_city_id"
+  add_index "places", ["slug"], name: "index_places_on_slug", unique: true
   add_index "places", ["user_id"], name: "index_places_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.integer  "city_id"
     t.string   "name"
+    t.string   "slug"
     t.string   "rol"
     t.boolean  "active"
     t.datetime "created_at",                          null: false
@@ -155,5 +170,6 @@ ActiveRecord::Schema.define(version: 20151112221528) do
   add_index "users", ["city_id"], name: "index_users_on_city_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
 end

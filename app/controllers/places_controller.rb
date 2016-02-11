@@ -1,6 +1,25 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
-  before_filter :es_admin, only: [:new, :edit, :update, :destroy]
+  before_action :set_place, only: [:show, :edit, :update, :destroy, :add_category]
+  before_filter :es_admin, only: [:new, :edit, :update, :destroy, :add_category]
+
+
+  #Agregar Categoria al lugar
+  def add_category
+    respond_to do |format|
+      category = Category.find(params[:category_id])
+      @place.categories << category 
+
+      if @place.save
+
+        format.html { redirect_to @place, notice: 'Place was successfully updated.' }
+        format.json { render :show, status: :ok, location: @place }
+      else
+        format.html { render :edit }
+        format.json { render json: @place.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   # GET /places
   # GET /places.json
@@ -43,6 +62,7 @@ class PlacesController < ApplicationController
   def update
     respond_to do |format|
       if @place.update(place_params)
+
         format.html { redirect_to @place, notice: 'Place was successfully updated.' }
         format.json { render :show, status: :ok, location: @place }
       else
@@ -65,7 +85,7 @@ class PlacesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_place
-      @place = Place.find(params[:id])
+      @place = Place.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

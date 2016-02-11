@@ -1,6 +1,25 @@
 class OptionsController < ApplicationController
-  before_action :set_option, only: [:show, :edit, :update, :destroy]
-  before_filter :es_admin, only: [:new, :edit, :update, :destroy]
+  before_action :set_option, only: [:show, :edit, :update, :destroy, :add_category]
+  before_filter :es_admin, only: [:new, :edit, :update, :destroy, :add_category]
+
+
+
+  #Agregar Categoria al lugar
+  def add_category
+    respond_to do |format|
+      category = Category.find(params[:category_id])
+      @option.categories << category 
+
+      if @option.save
+
+        format.html { redirect_to @option, notice: 'Option was successfully updated.' }
+        format.json { render :show, status: :ok, location: @option }
+      else
+        format.html { render :edit }
+        format.json { render json: @option.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # GET /options
   # GET /options.json

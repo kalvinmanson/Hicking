@@ -44,7 +44,8 @@ gem 'jquery-turbolinks'
 gem 'socialization'
 gem 'paperclip', '~> 4.3' #agregar campos
 gem 'geocoder' #Configurar en server final
-gem 'geokit-rails'
+gem 'geokit-rails' 
+gem 'friendly_id', '~> 5.1.0' #URLs Amigables
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

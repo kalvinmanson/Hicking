@@ -1,9 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p>
+		<strong>Name:</strong>
+		<%= @option.name %>
+	</p>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Atributos</div>
+				<div class="panel-body">
+					<%= form_for(@option, url: { action: "add_category" }, html: {class: ""} ) do |f| %>
+					<div class="form-group">
+						<%= label :category, :category_id %><br>
+						<%= select("", "category_id", Category.all.collect {|a| [a.name, a.id]}, {:prompt => "Selecciona la categoría"}, { class: 'form-control' }) %>
+					</div>
+					<%= f.submit %>
+					<% end %>
+					<ul>
+						<% @option.categories.each do |category| %>
+						<li><%= category.name %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @option.name %>
-</p>
-
-<%= link_to 'Edit', edit_option_path(@option) %> |
-<%= link_to 'Back', options_path %>
+	<%= link_to 'Edit', edit_option_path(@option), class: "btn btn-default" %>
+	<%= link_to 'Back', options_path, class: "btn btn-default" %>
+</div>

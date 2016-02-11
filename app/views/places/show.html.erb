@@ -1,34 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>User:</strong>
-  <%= @place.user %>
-</p>
+  <h3><%= @place.name %></h3>
+  <small><%= @place.slug %> | Active: <%= @place.active %></small>
 
-<p>
-  <strong>City:</strong>
-  <%= @place.city %>
-</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= @place.content %>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Categorias</div>
+        <div class="panel-body">
+          <%= form_for(@place, url: { action: "add_category" }, html: {class: ""} ) do |f| %>
+            <div class="form-group">
+              <%= label :category, :category_id %><br>
+              <%= select("", "category_id", Category.all.collect {|a| [a.name, a.id]}, {:prompt => "Selecciona la categoría"}, { class: 'form-control' }) %>
+            </div>
+            <%= f.submit %>
+          <% end %>
+          <ul>
+          <% @place.categories.each do |category| %>
+            <li><%= category.name %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
+      <div class="panel panel-default">
+        <div class="panel-heading">Atributos</div>
+        <div class="panel-body">
+          <%= form_for(@place, url: { action: "add_category" }, html: {class: ""} ) do |f| %>
+            <div class="form-group">
+              <%= label :category, :category_id %><br>
+              <%= select("", "category_id", Category.all.collect {|a| [a.name, a.id]}, {:prompt => "Selecciona la categoría"}, { class: 'form-control' }) %>
+            </div>
+            <%= f.submit %>
+          <% end %>
+          <ul>
+          <% @place.categories.each do |category| %>
+            <li><%= category.name %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @place.slug %>
-</p>
+      <p>
+        <strong>User:</strong>
+        <%= @place.user.name %>
+      </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @place.content %>
-</p>
+      <p>
+        <strong>Ubicación:</strong>
+        <%= @place.city.name %>, <%= @place.city.country.name %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Active:</strong>
-  <%= @place.active %>
-</p>
+  <%= link_to 'Editar', edit_place_path(@place), class: "btn btn-default" %>
+  <%= link_to 'Volver', places_path, class: "btn btn-default" %>
 
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+  
+</div>
+<pre>
+</pre>
