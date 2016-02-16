@@ -29,18 +29,30 @@
       <div class="panel panel-default">
         <div class="panel-heading">Atributos</div>
         <div class="panel-body">
-          <%= form_for(@place, url: { action: "add_category" }, html: {class: ""} ) do |f| %>
+
+          <%= form_for(@place, url: { action: "add_attribute" }, html: {class: ""} ) do |f| %>
             <div class="form-group">
-              <%= label :category, :category_id %><br>
-              <%= select("", "category_id", Category.all.collect {|a| [a.name, a.id]}, {:prompt => "Selecciona la categoría"}, { class: 'form-control' }) %>
+              <%= label :option, :option_id %><br>
+              <%= select("", "option_id", Option.includes(:categories).where(categories: { slug: [@place.categories.pluck(:slug)] }).collect {|a| [a.name, a.id]}, {:prompt => "Selecciona una opción", required: true}, { class: 'form-control' }) %>
+            </div>
+            <div class="form-group">
+              <%= label_tag :valor, 'Valor' %>
+              <%= text_field_tag :valor, nil, class: "form-control", required: true %>
             </div>
             <%= f.submit %>
           <% end %>
-          <ul>
-          <% @place.categories.each do |category| %>
-            <li><%= category.name %></li>
+          <table class="table table-striped">
+            <tr>
+              <th>Opcion</th>
+              <th>Valor</th>
+            </tr>
+          <% @place.specifications.each do |specification| %>
+            <tr>
+              <td><%= specification.option.name %></td>
+              <td><%= specification.name %></td>
+            </tr>
           <% end %>
-          </ul>
+          </table>
         </div>
       </div>
 
@@ -61,5 +73,3 @@
 
   
 </div>
-<pre>
-</pre>

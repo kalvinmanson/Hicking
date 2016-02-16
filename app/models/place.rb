@@ -1,6 +1,8 @@
 class Place < ActiveRecord::Base
   belongs_to :user
   belongs_to :city
+  #has_many   :attributes
+  has_many   :specifications, foreign_key: "place_id", class_name: "Attribute"
 
   has_and_belongs_to_many :categories, :before_add => :validates_category
 

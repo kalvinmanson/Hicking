@@ -19,8 +19,8 @@
       <% @attributes.each do |attribute| %>
         <tr>
           <td><%= attribute.place.name %></td>
-          <td><%= attribute.user %></td>
-          <td><%= attribute.option %></td>
+          <td><%= attribute.user.name %></td>
+          <td><%= attribute.option.name %></td>
           <td><%= attribute.name %></td>
           <td><%= attribute.active %></td>
           <td><%= link_to 'Show', attribute %></td>

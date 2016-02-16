@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy, :add_category]
-  before_filter :es_admin, only: [:new, :edit, :update, :destroy, :add_category]
+  before_action :set_place, only: [:show, :edit, :update, :destroy, :add_category, :add_attribute]
+  before_filter :es_admin, only: [:new, :edit, :update, :destroy, :add_category, :add_attribute]
 
 
   #Agregar Categoria al lugar
@@ -18,6 +18,37 @@ class PlacesController < ApplicationController
         format.json { render json: @place.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  #Agregar Atributo al lugar
+  def add_attribute
+      respond_to do |format|
+
+      option = Option.find(params[:option_id])
+      if current_user.id == @place.user_id
+        activado = true
+      else
+        activado = false
+      end
+
+      @attribute = Attribute.new
+      @attribute.place_id = @place.id
+      @attribute.user_id = current_user.id
+      @attribute.option_id = option.id
+      @attribute.name = params[:valor]
+      @attribute.active = activado
+
+      if @attribute.save
+
+        format.html { redirect_to @place, notice: 'Place was successfully updated.' }
+        format.json { render :show, status: :ok, location: @place }
+      else
+        format.html { render :edit }
+        format.json { render json: @place.errors, status: :unprocessable_entity }
+      end
+    end
+
+
   end
 
 
