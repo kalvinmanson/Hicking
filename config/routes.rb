@@ -18,10 +18,13 @@ Rails.application.routes.draw do
 
 
   get '/cities_country/:id', to: 'cities#index', as: 'cities_country'
+  get '/map/:id', to: 'places#map', as: 'map'
   post '/cities_country', to: 'cities#index'
   patch '/places/add_category/:id', to: 'places#add_category'
   patch '/places/add_attribute/:id', to: 'places#add_attribute'
   patch '/options/add_category/:id', to: 'options#add_category'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

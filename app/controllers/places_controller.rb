@@ -47,10 +47,13 @@ class PlacesController < ApplicationController
         format.json { render json: @place.errors, status: :unprocessable_entity }
       end
     end
-
-
   end
 
+  #Agregar Atributo al lugar
+  def map
+    slugvar = params[:id]
+    @places = Category.friendly.find(slugvar).places.limit(100)
+  end
 
   # GET /places
   # GET /places.json
