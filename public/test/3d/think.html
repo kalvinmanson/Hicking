@@ -1,0 +1,385 @@
+<!DOCTYPE html><html><head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript" id="thinglinkJQueryScript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+  // setup context path
+  var contextPath = '';
+  var staticUrl = 'https://cdn.thinglink.me';
+  var siteUrl = 'https://www.thinglink.com';
+  var secureSiteUrl = 'https://www.thinglink.com';
+
+  // setup thinglink
+  $tlJQ = jQuery.noConflict();
+
+  // make sure there is always a console.
+  if (typeof (console) == "undefined") {
+     window.console = {
+        log : function() {}
+     };
+  }
+
+</script>
+
+
+        <style type="text/css">
+            
+            html, body {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                width: 100%;
+                height: 100%;
+                font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+
+            body.tlFullscreen {
+                background-color: black;
+            }
+
+            
+            html {
+                width: 100%;
+                height: 100%;
+            }
+
+            
+            body {
+                /* this is needed to fix the bug */
+                -webkit-transform:translateZ(0);
+
+                /* these may help performance when translateZ is in use */
+                -webkit-backface-visibility: hidden;
+                -webkit-perspective: 1000;
+            }
+
+            html {
+                
+                overflow:hidden;
+            }
+            
+            p.gone {
+                margin:auto;
+                padding: 24px;
+                font-size: 20px;
+                font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: 100;
+                text-align: center;
+            }
+            div#imageHolder {
+                
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom:0;
+                margin:auto;
+                text-align:center;
+
+                
+                font-size:0;
+                word-spacing: 0;
+                letter-spacing: 0;
+            }
+
+            div.scene-container {
+                max-width: 100%;
+            }
+
+            div.tlFullscreenable {
+                /* For absolute upsell positioning */
+                position: relative;
+            }
+            
+        </style>
+        
+
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.thinglink.me/jsec/152114316515/embed.css">
+
+    <link id="tlInjectedCss" type="text/css" rel="stylesheet" href="https://cdn.thinglink.me/jsec/152114316515/embed.css"></head>
+    <body class="tlFullscreenable">
+        
+        
+            
+                <div id="imageHolder" class="" style="width: 470px; height: 321.769px;">
+                    <div id="scene_319522230100819969" class="single-scene scene-container">
+                        <script>
+                            var ww = $tlJQ(window).width();
+                            var url = 'https://cdn.thinglink.me/api/image/319522230100819969/640/10/scaletowidth';
+                            if( ww > 640 ) {
+                                url = 'https://cdn.thinglink.me/api/image/319522230100819969/1024/10/scaletowidth';
+                            }
+                            document.write('<img class="alwaysThinglink" src="'+url+'" tl-scene-id="319522230100819969"/>');
+                        </script><div class="tlImageContainer tlSmallNavi mouseover" style="r: 0 !important; box-sizing: content-box !important; border: 0px none rgb(0, 0, 0) !important; padding: 0px !important; left: auto !important; top: auto !important; right: auto !important; bottom: auto !important; margin: 0px !important; width: 470px !important; height: 322px !important; z-index: 0 !important; background-color: rgba(0, 0, 0, 0) !important;"><img class="alwaysThinglink thinglinkImage" src="https://cdn.thinglink.me/api/image/319522230100819969/640/10/scaletowidth" tl-scene-id="319522230100819969" width="470" height="321.7692307692308" style="padding: 0px !important; border: 0px !important; margin: 0px !important; width: 100% !important; height: 100% !important;"><div class="tlSidebar" style="z-index: 2; right: 0px !important; top: 0px !important; display: none;"><span class="tlMenuItem tlMenuItemTouch tlNonTouchDevice tlUntouch"><a class="tlMenuIcon tlMenuTouch" href="#" title="2 touches on the image"></a><span class="tlMenuLabel tlMenuLabelTouch">Untouch</span></span><span class="tlMenuItem tlMenuItemShare tlNonTouchDevice"><a class="tlMenuIcon tlMenuShare" href="#"></a><span class="tlMenuLabel tlMenuLabelShare">Share</span></span><span class="tlMenuItem tlMenuItemFullscreen tlNonTouchDevice"><a class="tlMenuIcon tlMenuFullscreen" href="#"></a><span class="tlMenuLabel tlMenuLabelFullscreen">Fullscreen</span></span></div><div class="tlFirstseen" style="bottom: 0px !important; left: 0px !important; display: none;"><a href="http://herramientas20enmiescuela.blogspot.com.co/2012/10/thinglink.html">Source herramientas20enmiescuela.blogspot.com.co</a></div><div class="tlFourDotsButton"><div id="intro">Made with</div><div id="logo"></div><a class="btn" href="https://www.thinglink.com?buttonSource=badgeButtonBox" target="_blank"><span class="btnMessageShort">Learn more</span></a><div class="arrowRight"></div></div><div class="tlContextMenu" unselectable="on" style="display: none; z-index: 2; left: 13px !important; top: 27.8906px !important;"><div class="tlContextMenuItem tlContextMenuTouch">Touch image</div><div class="tlContextMenuItem tlContextMenuShare">Share image...</div></div><div class="tlThingContainer"><div class="tagx nubbin-bwimage tl-a-319522459126595585" tl-thing-id="319522459126595585" href="" style="top: 74px !important; left: 418px !important; width: 49px !important; height: 140px !important;"><div class="nubbin unpinned tlSneakPeeked" style="z-index: 1; display: none;"><div class="nubbinGlow" style="display: none; background-image: url(&quot;https://cdn.thinglink.me/api/nubbin/bwimage/highlight&quot;) !important;"></div><div class="nubbinIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwimage/plain') !important;"></div><div class="nubbinHoverIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwimage/hover') !important;"></div></div></div></div><div class="tlThingContainer"><div class="tagx nubbin-bwimage tl-a-319522892180094977" tl-thing-id="319522892180094977" href="" style="top: 79px !important; left: 151px !important; width: 60px !important; height: 111px !important;"><div class="nubbin unpinned tlSneakPeeked" style="z-index: 1; display: none;"><div class="nubbinGlow" style="display: none; background-image: url(&quot;https://cdn.thinglink.me/api/nubbin/bwimage/highlight&quot;) !important;"></div><div class="nubbinIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwimage/plain') !important;"></div><div class="nubbinHoverIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwimage/hover') !important;"></div></div></div></div><div class="tlThingContainer"><div class="tagx nubbin-bwimage tl-a-319523337510322177" tl-thing-id="319523337510322177" href="" style="top: 66px !important; left: 273px !important; width: 60px !important; height: 124px !important;"><div class="nubbin unpinned tlSneakPeeked" style="z-index: 1; display: none;"><div class="nubbinGlow" style="display: none; background-image: url(&quot;https://cdn.thinglink.me/api/nubbin/bwimage/highlight&quot;) !important;"></div><div class="nubbinIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwimage/plain') !important;"></div><div class="nubbinHoverIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwimage/hover') !important;"></div></div></div></div><div class="tlThingContainer"><div class="tagx nubbin-bwimage tl-a-319523682365997057" tl-thing-id="319523682365997057" href="" style="top: 237px !important; left: 29px !important; width: 336px !important; height: 83px !important;"><div class="nubbin unpinned tlSneakPeeked" style="z-index: 1; display: none;"><div class="nubbinGlow" style="display: none; background-image: url(&quot;https://cdn.thinglink.me/api/nubbin/bwimage/highlight&quot;) !important;"></div><div class="nubbinIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwimage/plain') !important;"></div><div class="nubbinHoverIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwimage/hover') !important;"></div></div></div></div><div id="9592798245418646" class="tlThingContainer"><div class="tagx nubbin-bwplay tl-a-319524540285714433" tl-thing-id="319524540285714433" href="https://www.youtube.com/watch?v=OT2Np8b6GBg" style="top: 189px !important; left: 214px !important; width: 180px !important; height: 44px !important;"><div class="nubbin unpinned tlSneakPeeked" style="z-index: 1; display: none;"><div class="nubbinGlow" style="display: none; background-image: url(&quot;https://cdn.thinglink.me/api/nubbin/bwplay/highlight&quot;) !important;"></div><div class="nubbinIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwplay/plain') !important;"></div><div class="nubbinHoverIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwplay/hoverlink') !important;"></div></div></div></div><div class="tlThingContainer"><div class="tagx nubbin-bwalert tl-a-347472287642943489" tl-thing-id="347472287642943489" href="http://www.flickr.com/photos/paulayjesus/8373117223/in/photostream" style="top: 59.5px !important; left: -3px !important; width: 44px !important; height: 44px !important;"><div class="nubbin unpinned tlSneakPeeked" style="z-index: 1; display: none;"><div class="nubbinGlow" style="display: none; background-image: url(&quot;https://cdn.thinglink.me/api/nubbin/bwalert/highlight&quot;) !important;"></div><div class="nubbinIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwalert/plain') !important;"></div><div class="nubbinHoverIcon" style="background-image: url('https://cdn.thinglink.me/api/nubbin/bwalert/hoverlink') !important;"></div></div></div></div><div class="tlTouchStatusPopup tlTouchPopup tlPopup" style="display: none;"><div class="tlPopupInner"><h3>Touched image</h3><p>2 touches on the image</p>&lt;</div></div></div>
+                        
+                            
+
+
+
+<style type="text/css">
+	#tlFullscreenUpsell {
+        z-index: 100000;
+        margin: 0 auto;
+        display: none;
+        height: 40%;
+        width: 64%;
+        position: absolute;
+        top: 30%;
+        left: 18%;
+        background-color: rgba(20, 30, 35, 0.7) !important;
+        border-radius: 5px;
+        text-align: center;
+    }
+    #tlFullscreenUpsell .link {
+        position: relative;
+        top: 45%;
+        font-size: 35px;
+        line-height: 35px;
+        background-color: rgba(20, 30, 35, 0) !important;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+    }
+
+    /* Anything more narrow that portrait iPad */
+    @media (max-width: 1023px) {
+        #tlFullscreenUpsell {
+            height: 60%;
+            top: 30%;
+            width: 80%;
+            left: 10%;
+        }
+        #tlFullscreenUpsell .link {
+            top: 48%;
+            font-size: 28px;
+            line-height: 28px;
+        }
+    }
+
+    /* Around 500px upsell text splits to two lines. Let's do adjustment at 480px as it's one of the popular screen widths */
+    @media (max-width: 480px) {
+        #tlFullscreenUpsell {
+            width: 84%;
+            left: 8%;
+        }
+
+        #tlFullscreenUpsell .link {
+            top: 40%;
+            font-size: 22px;
+            line-height: 22px;
+        }
+    }
+
+    /* Anything more narrow that landsc*/
+    @media (max-width: 319px) {
+        #tlFullscreenUpsell {
+            width: 84%;
+            left: 8%;
+        }
+
+        #tlFullscreenUpsell .link {
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+
+</style>
+
+
+
+
+                        
+                    </div>
+                </div>
+            
+            
+        
+
+        
+        <script>
+            window.__tlconfig = {"forceSecure":true, "referer": "https://staticxx.facebook.com/common/referer_frame.php"};
+
+            
+                
+                    window.__tlconfig.extraSidebarIcons = [];
+                    window.__tlconfig.extraSidebarIcons.push("Fullscreen");
+                
+            
+
+            
+            
+                __tlconfig.disableEditorButton = true;
+            
+            
+        </script>
+        <script src="https://cdn.thinglink.me/jsec/152114316515/embed.js" type="text/javascript" tl-script-loaded="true"></script>
+        <script>
+        
+        
+        var doresize = function() {
+            var width = $tlJQ(window).width();
+            var height = $tlJQ(window).height();
+            var imgWidth = 650;
+            var imgHeight = 445;
+            
+            var aspectRatio = imgWidth/imgHeight;
+            
+            var newHeight = width/aspectRatio;
+            var newWidth  = height*aspectRatio;
+            
+            if( newWidth < width ) {
+                $tlJQ("img.alwaysThinglink").attr('height',height).attr('width',height*aspectRatio);
+                $tlJQ("#imageHolder").width(height*aspectRatio);
+                $tlJQ("#imageHolder").height(height);
+            } else {
+                $tlJQ("img.alwaysThinglink").attr("width",width).attr('height',width/aspectRatio);
+                $tlJQ("#imageHolder").width(width);
+                $tlJQ("#imageHolder").height(width/aspectRatio);
+            }
+        }
+        
+        $tlJQ(document).ready(function() {
+            doresize();
+
+            
+            
+        });
+        
+        var resizeTimeout;
+        $tlJQ(window).resize(function(){
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function(){
+                doresize();
+                __thinglink.reposition();
+            }, 300);
+        });
+
+        
+        // $tlJQ.browser.msie doesn't work for IE11
+        if(navigator.userAgent.indexOf('Trident') !== -1) {
+            var periodicImageContainerStylesCleanup = function()
+            {
+                $tlJQ('.tlImageContainer').attr('style', '');
+                setTimeout(periodicImageContainerStylesCleanup, 300);
+            };
+            setTimeout(periodicImageContainerStylesCleanup, 300);
+        }
+        </script>
+        <script type="text/javascript" src="//cdn.thinglink.me/jsc/gzip_N90816093/bundles/mobile-utilities.js"></script>
+
+        <script type="text/javascript">
+preloadImages([
+    'https://cdn.thinglink.me/gfx/thinglink-new-sprite.png',
+    'https://cdn.thinglink.me/gfx/thinglink-new-sprite@2x.png',
+    
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/plain',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/plain',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/plain',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/plain',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwplay/plain',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwalert/plain',
+    
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/highlight',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/highlight',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/highlight',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/highlight',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwplay/highlight',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwalert/highlight',
+    
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/hover',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/hover',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/hover',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/hover',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwplay/hover',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwalert/hover',
+    
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/hoverlink',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/hoverlink',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/hoverlink',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwimage/hoverlink',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwplay/hoverlink',
+    
+        
+        
+        'https://cdn.thinglink.me/api/nubbin/bwalert/hoverlink',
+    
+]);
+</script>
+    
+
+<div id="tlTagContainer" class=""><div class="tlThingText tlThemeRichThing tlVariantImageThing" id="tl-a-319522459126595585" style="z-index: 2; display: none; top: 17px !important; left: 123px !important; opacity: 1;"><div class="tlThingClose"></div><div class="tlCenterArrow" style="left: 155px !important;"></div><div class="tlThingContent" style="max-width: 440px !important; max-height: 262px !important; color: rgb(0, 0, 0); font-family: inherit; background-color: rgb(255, 255, 255);"><div class="tlNonplayingContent " style="max-width:440px!important; max-height:262px!important;"><div class="tlThumbnail " style="important;max-width:440px!important; max-height:262px!important;"><div class="tlVideoIconWrapper"><img class="tlThingIcon" src="https://cdn.thinglink.me/api/image/B69zEgfimp5o7DCLrZkecK5Uq1MfBkkHxE6fcAEK418oH3VoXSYVBRDJ3YzH9Q4pdB7WUCXNCrSbWkbqMw2QiddrPZtHgox8bW1xQFhQ/320/320/scaledown"></div><div class="tlThumbnailOverlay"></div></div><span class="tlCenteringOuter" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringMiddle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringInner " style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlThingTitle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;">Nuestro gimnasio</span></span></span></span></div></div><div class="tlArrowWrapper"><div class="tlArrow" style="display: none; border-top-color: rgb(255, 255, 255) !important;"></div></div></div><div class="tlThingText tlThemeRichThing tlVariantImageThing" id="tl-a-319522892180094977" style="z-index: 2; display: none; top: 17px !important; left: 16px !important; opacity: 1;"><div class="tlThingClose"></div><div class="tlCenterArrow" style="left: 0px !important;"></div><div class="tlThingContent" style="max-width: 440px !important; max-height: 262px !important; color: rgb(0, 0, 0); font-family: inherit; background-color: rgb(255, 255, 255);"><div class="tlNonplayingContent " style="max-width:440px!important; max-height:262px!important;"><div class="tlThumbnail " style="important;max-width:440px!important; max-height:262px!important;"><div class="tlVideoIconWrapper"><img class="tlThingIcon" src="https://cdn.thinglink.me/api/image/B69zEgfimp5o7DCLrZkecK5Uq1MfBkkHxE6fcAEK418oH3VoXSYVBRDJ3YzH9Q4pdB7WUCXNCrSbWkbqMw2QiddrPZtHgox8b1FKrbK4/320/320/scaledown"></div><div class="tlThumbnailOverlay"></div></div><span class="tlCenteringOuter" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringMiddle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringInner " style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlThingTitle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;">Patio de baloncestos</span></span></span></span></div></div><div class="tlArrowWrapper"><div class="tlArrow" style="display: none; border-top-color: rgb(255, 255, 255) !important;"></div></div></div><div class="tlThingText tlThemeRichThing tlVariantImageThing" id="tl-a-319523337510322177" style="z-index: 2; display: none; opacity: 1; top: 17px !important; left: 123px !important;"><div class="tlThingClose"></div><div class="tlCenterArrow" style="left: 15px !important;"></div><div class="tlThingContent" style="max-width: 440px !important; max-height: 262px !important; color: rgb(0, 0, 0); font-family: inherit; background-color: rgb(255, 255, 255);"><div class="tlNonplayingContent " style="max-width:440px!important; max-height:262px!important;"><div class="tlThumbnail " style="important;max-width:440px!important; max-height:262px!important;"><div class="tlVideoIconWrapper"><img class="tlThingIcon" src="https://cdn.thinglink.me/api/image/4PYjjVeteBBDAxpB93Hh8iNm2rNdTXtZSHnNUmLPhnFQv4NXySrYfr1zrDY2jbVoraVX6gsdp2TSFeGQeoU6izTtUa3u7JcTnSbnW15fGZU/320/320/scaledown"></div><div class="tlThumbnailOverlay"></div></div><span class="tlCenteringOuter" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringMiddle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringInner " style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlThingTitle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;">patio de fútbol</span></span></span></span></div></div><div class="tlArrowWrapper"><div class="tlArrow" style="display: none; border-top-color: rgb(255, 255, 255) !important;"></div></div></div><div class="tlThingText tlThemeRichThing tlVariantImageThing" id="tl-a-319523682365997057" style="z-index: 2; display: none; opacity: 1; top: 17px !important; left: 32px !important;"><div class="tlThingClose"></div><div class="tlCenterArrow" style="left: 0px !important;"></div><div class="tlThingContent" style="max-width: 440px !important; max-height: 262px !important; color: rgb(0, 0, 0); font-family: inherit; background-color: rgb(255, 255, 255);"><div class="tlNonplayingContent " style="max-width:440px!important; max-height:262px!important;"><div class="tlThumbnail " style="important;max-width:440px!important; max-height:262px!important;"><div class="tlVideoIconWrapper"><img class="tlThingIcon" src="https://cdn.thinglink.me/api/image/4PYjjVeteBBDAxpB93Hh8iNm2rNdTXtZSHnNUmLPhnFQv4NXySrYfr1zrDY2jbVoraVX6gsdp2TSFeGQeoU6izTtUa3u7JcTnSbnVfT4n8e/320/320/scaledown"></div><div class="tlThumbnailOverlay"></div></div><span class="tlCenteringOuter" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringMiddle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringInner " style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlThingTitle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;">patio de abajo</span></span></span></span></div></div><div class="tlArrowWrapper"><div class="tlArrow" style="display: none; border-top-color: rgb(255, 255, 255) !important;"></div></div></div><div class="tlThingText tlThemeRichThing tlVariantVideoThing" id="tl-a-319524540285714433" style="z-index: 2; display: none; opacity: 1; top: 17px !important; left: 187px !important;"><div class="tlThingClose"></div><div class="tlCenterArrow" style="left: 0px !important;"></div><div class="tlThingContent" style="max-width: 440px !important; max-height: 262px !important; color: rgb(0, 0, 0); font-family: inherit; background-color: rgb(255, 255, 255);"><div class="tlNonplayingContent " style="max-width:440px!important; max-height:262px!important;"><div class="tlThumbnail " style="important;max-width:440px!important; max-height:262px!important;"><div class="tlVideoIconWrapper"><img class="tlThingIcon" src="https://i.ytimg.com/vi/OT2Np8b6GBg/hqdefault.jpg"></div><div class="tlThumbnailOverlay"></div></div><span class="tlCenteringOuter" style="color:#000000!important;font-size:11px!important;font-family:inherit!important;"><span class="tlCenteringMiddle" style="color:#000000!important;font-size:11px!important;font-family:inherit!important;"><span class="tlCenteringInner " style="color:#000000!important;font-size:11px!important;font-family:inherit!important;"><span class="tlThingTitle" style="color:#000000!important;font-size:11px!important;font-family:inherit!important;">EL TIEMBLO toros de guisando</span></span></span></span></div></div><div class="tlArrowWrapper"><div class="tlArrow" style="display: none; border-top-color: rgb(255, 255, 255) !important;"></div></div></div><div class="tlThingText tlThemeRichThing tlVariantImageThing tlUpArrowInside" id="tl-a-347472287642943489" style="z-index: 2; display: none; opacity: 1; top: 94.6094px !important; left: 5px !important;"><div class="tlUpArrow" style="left: -111px !important; border-bottom-color: rgb(255, 255, 255) !important;"></div><div class="tlThingClose"></div><div class="tlThingContent" style="max-width: 440px !important; max-height: 262px !important; color: rgb(0, 0, 0); font-family: inherit; background-color: rgb(255, 255, 255);"><div class="tlNonplayingContent " style="max-width:440px!important; max-height:262px!important;"><div class="tlThumbnail " style="important;max-width:440px!important; max-height:262px!important;"><div class="tlVideoIconWrapper"><img class="tlThingIcon" src="https://farm9.staticflickr.com/8087/8373117223_4771e024b2_m.jpg"></div><div class="tlThumbnailOverlay"></div></div><span class="tlCenteringOuter" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringMiddle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlCenteringInner " style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"><span class="tlThingTitle" style="color:#000000!important;font-size:12px!important;font-family:inherit!important;"></span></span></span></span></div><div class="tlThingFooter" style="color:#000000!important;font-size:9!important;font-family:inherit!important;">flickr.com</div></div><div class="tlArrowWrapper"><div class="tlArrow" style="display: none; border-top-color: rgb(255, 255, 255) !important;"></div></div></div></div><div id="tlOverlayContainer"><div class="tlShareIframePopup tlSharePopup tl-item-319522230100819969 tlPopup" style="display: none; left: 93px !important; top: 13px !important;"><div class="tlPopupInner"><iframe id="tlSharingFrame" src="https://www.thinglink.com/embed/share/319522230100819969?shareUrl=https%3A%2F%2Fwww.thinglink.com%2Fcard%2F319522230100819969%3Fon%3Dfb%23tl-72ce16fa&amp;domainHash=1043138249#rtid=8818302950153345&amp;target=https%3A%2F%2Fwww.thinglink.com%2Fcard%2F319522230100819969%3Fon%3Dfb&amp;referer=https%3A%2F%2Fstaticxx.facebook.com%2Fcommon%2Freferer_frame.php" type="text/html" height="272px" +="" frameborder="0"></iframe></div><a href="#" class="tlCloseBtn"></a></div></div></body></html>
